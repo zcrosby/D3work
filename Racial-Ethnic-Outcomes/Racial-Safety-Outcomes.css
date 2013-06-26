@@ -1,0 +1,109 @@
+
+
+.box{
+	position:absolute;
+
+} 
+#chartContainer{
+
+	width:1000px;
+	height:600px;
+	border:solid 1px #e3e3e3;
+	position: relative;
+}
+
+svg {
+
+  font: 10px sans-serif;
+}
+
+.legend{
+	
+	/*position: absolute;
+	bottom:10px;
+	left:20px;*/
+	
+}	
+
+.legend-item{
+}
+
+.legend-text{
+	fill:#000;
+	opacity:1;
+	
+	stroke: #444;
+}
+
+.selectYear{
+	position: relative;
+	width: 200px;
+	height: 25px;
+	left: 920px;
+	top: 20px;
+}
+
+.yAxis path{
+	display: none;
+}
+
+.yAxis line{
+
+	stroke: #444;
+  	stroke-opacity: .1;
+  	shape-rendering: crispEdges;
+}
+
+.xAxis path{
+	display:none;
+
+	
+}
+
+.xaxis line {
+	stroke: #ff2d2d;
+}
+
+
+g.indicatorBars{
+
+
+}
+
+.indicatorBars rect{
+	cursor: pointer;
+	/*opacity: 0.8;*/
+}
+
+.indicatorBars rect.selected{
+	stroke:#444;
+	stroke-width:2;
+	opacity:1;
+
+}
+
+/*RACE COLOR PALLETE*/
+
+.allraces{
+	fill:#265573;
+}
+
+.asian{
+	fill:#386D73;
+}
+
+.black{
+	fill:#3B8686;
+}
+
+.hispanic{
+	fill:#79BD9A;
+}
+
+.nativeamerican{
+	fill:#A8DBA8;
+}
+
+.white{
+	fill:#CFF09E;
+}

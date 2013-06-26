@@ -1,0 +1,402 @@
+{
+    "2008": {
+        "Juveniles at the Training School (per 1,000 males ages 14-19)": {
+            "WHITE2008": {
+                "race": "WHITE",
+                "value": "2.7"
+            },
+            "ASIAN2008": {
+                "race": "ASIAN",
+                "value": "7.4"
+            },
+            "BLACK2008": {
+                "race": "BLACK",
+                "value": "32.5"
+            },
+            "NATIVEAMERICAN2008": {
+                "race": "NATIVEAMERICAN",
+                "value": "8.5"
+            },
+            "ALLRACES2008": {
+                "race": "ALLRACES",
+                "value": "6.1"
+            },
+            "HISPANIC2008": {
+                "race": "HISPANIC",
+                "value": "13.7"
+            }
+        },
+        "Children of Incarcerated Parents (per 1,000 children)": {
+            "WHITE2008": {
+                "race": "WHITE",
+                "value": "8.6"
+            },
+            "ASIAN2008": {
+                "race": "ASIAN",
+                "value": "2.9"
+            },
+            "BLACK2008": {
+                "race": "BLACK",
+                "value": "83.5"
+            },
+            "NATIVEAMERICAN2008": {
+                "race": "NATIVEAMERICAN",
+                "value": "8.9"
+            },
+            "ALLRACES2008": {
+                "race": "ALLRACES",
+                "value": "14"
+            },
+            "HISPANIC2008": {
+                "race": "HISPANIC",
+                "value": "21.1"
+            }
+        },
+        "Children in Out-of-Home Placement (per 1,000 children)": {
+            "WHITE2008": {
+                "race": "WHITE",
+                "value": "8.5"
+            },
+            "ASIAN2008": {
+                "race": "ASIAN",
+                "value": "8.3"
+            },
+            "BLACK2008": {
+                "race": "BLACK",
+                "value": "36.7"
+            },
+            "NATIVEAMERICAN2008": {
+                "race": "NATIVEAMERICAN",
+                "value": "16.9"
+            },
+            "ALLRACES2008": {
+                "race": "ALLRACES",
+                "value": "10.7"
+            },
+            "HISPANIC2008": {
+                "race": "HISPANIC",
+                "value": "17.8"
+            }
+        }
+    },
+    "2009": {
+        "Juveniles at the Training School (per 1,000 males ages 14-19)": {
+            "WHITE2009": {
+                "race": "WHITE",
+                "value": "1.8"
+            },
+            "ASIAN2009": {
+                "race": "ASIAN",
+                "value": "4.7"
+            },
+            "NATIVEAMERICAN2009": {
+                "race": "NATIVEAMERICAN",
+                "value": "2.8"
+            },
+            "BLACK2009": {
+                "race": "BLACK",
+                "value": "25.8"
+            },
+            "ALLRACES2009": {
+                "race": "ALLRACES",
+                "value": "4.6"
+            },
+            "HISPANIC2009": {
+                "race": "HISPANIC",
+                "value": "10.6"
+            }
+        },
+        "Children of Incarcerated Parents (per 1,000 children)": {
+            "WHITE2009": {
+                "race": "WHITE",
+                "value": "7.2"
+            },
+            "ASIAN2009": {
+                "race": "ASIAN",
+                "value": "1.8"
+            },
+            "NATIVEAMERICAN2009": {
+                "race": "NATIVEAMERICAN",
+                "value": "15.1"
+            },
+            "BLACK2009": {
+                "race": "BLACK",
+                "value": "73.2"
+            },
+            "ALLRACES2009": {
+                "race": "ALLRACES",
+                "value": "12.3"
+            },
+            "HISPANIC2009": {
+                "race": "HISPANIC",
+                "value": "20.1"
+            }
+        },
+        "Children in Out-of-Home Placement (per 1,000 children)": {
+            "WHITE2009": {
+                "race": "WHITE",
+                "value": "7.5"
+            },
+            "ASIAN2009": {
+                "race": "ASIAN",
+                "value": "7.1"
+            },
+            "NATIVEAMERICAN2009": {
+                "race": "NATIVEAMERICAN",
+                "value": "13.8"
+            },
+            "BLACK2009": {
+                "race": "BLACK",
+                "value": "29.7"
+            },
+            "ALLRACES2009": {
+                "race": "ALLRACES",
+                "value": "9.4"
+            },
+            "HISPANIC2009": {
+                "race": "HISPANIC",
+                "value": "16.1"
+            }
+        }
+    },
+    "2010": {
+        "Juveniles at the Training School (per 1,000 males ages 14-19)": {
+            "ASIAN2010": {
+                "race": "ASIAN",
+                "value": "2.7"
+            },
+            "BLACK2010": {
+                "race": "BLACK",
+                "value": "19.4"
+            },
+            "HISPANIC2010": {
+                "race": "HISPANIC",
+                "value": "10.3"
+            },
+            "WHITE2010": {
+                "race": "WHITE",
+                "value": "1.7"
+            },
+            "ALLRACES2010": {
+                "race": "ALLRACES",
+                "value": "4"
+            },
+            "NATIVEAMERICAN2010": {
+                "race": "NATIVEAMERICAN",
+                "value": "0"
+            }
+        },
+        "Children of Incarcerated Parents (per 1,000 children)": {
+            "ASIAN2010": {
+                "race": "ASIAN",
+                "value": "3.5"
+            },
+            "BLACK2010": {
+                "race": "BLACK",
+                "value": "72.4"
+            },
+            "HISPANIC2010": {
+                "race": "HISPANIC",
+                "value": "18.1"
+            },
+            "WHITE2010": {
+                "race": "WHITE",
+                "value": "7.8"
+            },
+            "ALLRACES2010": {
+                "race": "ALLRACES",
+                "value": "12.5"
+            },
+            "NATIVEAMERICAN2010": {
+                "race": "NATIVEAMERICAN",
+                "value": "15.8"
+            }
+        },
+        "Children in Out-of-Home Placement (per 1,000 children)": {
+            "ASIAN2010": {
+                "race": "ASIAN",
+                "value": "5.9"
+            },
+            "BLACK2010": {
+                "race": "BLACK",
+                "value": "28.7"
+            },
+            "HISPANIC2010": {
+                "race": "HISPANIC",
+                "value": "16.1"
+            },
+            "WHITE2010": {
+                "race": "WHITE",
+                "value": "7.3"
+            },
+            "ALLRACES2010": {
+                "race": "ALLRACES",
+                "value": "9.2"
+            },
+            "NATIVEAMERICAN2010": {
+                "race": "NATIVEAMERICAN",
+                "value": "8.7"
+            }
+        }
+    },
+    "2011": {
+        "Juveniles at the Training School (per 1,000 males ages 14-19)": {
+            "BLACK2011": {
+                "race": "BLACK",
+                "value": "15"
+            },
+            "ASIAN2011": {
+                "race": "ASIAN",
+                "value": "3.1"
+            },
+            "WHITE2011": {
+                "race": "WHITE",
+                "value": "1.1"
+            },
+            "NATIVEAMERICAN2011": {
+                "race": "NATIVEAMERICAN",
+                "value": "6.6"
+            },
+            "ALLRACES2011": {
+                "race": "ALLRACES",
+                "value": "3.2"
+            },
+            "HISPANIC2011": {
+                "race": "HISPANIC",
+                "value": "7.7"
+            }
+        },
+        "Children of Incarcerated Parents (per 1,000 children)": {
+            "BLACK2011": {
+                "race": "BLACK",
+                "value": "63.9"
+            },
+            "ASIAN2011": {
+                "race": "ASIAN",
+                "value": "2.8"
+            },
+            "WHITE2011": {
+                "race": "WHITE",
+                "value": "9.2"
+            },
+            "NATIVEAMERICAN2011": {
+                "race": "NATIVEAMERICAN",
+                "value": "21.2"
+            },
+            "ALLRACES2011": {
+                "race": "ALLRACES",
+                "value": "13"
+            },
+            "HISPANIC2011": {
+                "race": "HISPANIC",
+                "value": "14"
+            }
+        },
+        "Children in Out-of-Home Placement (per 1,000 children)": {
+            "BLACK2011": {
+                "race": "BLACK",
+                "value": "23.4"
+            },
+            "ASIAN2011": {
+                "race": "ASIAN",
+                "value": "5.6"
+            },
+            "WHITE2011": {
+                "race": "WHITE",
+                "value": "8.8"
+            },
+            "NATIVEAMERICAN2011": {
+                "race": "NATIVEAMERICAN",
+                "value": "8.2"
+            },
+            "ALLRACES2011": {
+                "race": "ALLRACES",
+                "value": "10.2"
+            },
+            "HISPANIC2011": {
+                "race": "HISPANIC",
+                "value": "12.8"
+            }
+        }
+    },
+    "2012": {
+        "Juveniles at the Training School (per 1,000 males ages 14-19)": {
+            "ASIAN2012": {
+                "race": "ASIAN",
+                "value": "0.8"
+            },
+            "BLACK2012": {
+                "race": "BLACK",
+                "value": "10.2"
+            },
+            "WHITE2012": {
+                "race": "WHITE",
+                "value": "0.9"
+            },
+            "HISPANIC2012": {
+                "race": "HISPANIC",
+                "value": "5"
+            },
+            "ALLRACES2012": {
+                "race": "ALLRACES",
+                "value": "2.6"
+            },
+            "NATIVEAMERICAN2012": {
+                "race": "NATIVEAMERICAN",
+                "value": "0"
+            }
+        },
+        "Children of Incarcerated Parents (per 1,000 children)": {
+            "ASIAN2012": {
+                "race": "ASIAN",
+                "value": "3.1"
+            },
+            "BLACK2012": {
+                "race": "BLACK",
+                "value": "63.4"
+            },
+            "WHITE2012": {
+                "race": "WHITE",
+                "value": "9.2"
+            },
+            "HISPANIC2012": {
+                "race": "HISPANIC",
+                "value": "14"
+            },
+            "ALLRACES2012": {
+                "race": "ALLRACES",
+                "value": "13"
+            },
+            "NATIVEAMERICAN2012": {
+                "race": "NATIVEAMERICAN",
+                "value": "26.7"
+            }
+        },
+        "Children in Out-of-Home Placement (per 1,000 children)": {
+            "ASIAN2012": {
+                "race": "ASIAN",
+                "value": "4.5"
+            },
+            "BLACK2012": {
+                "race": "BLACK",
+                "value": "17.8"
+            },
+            "WHITE2012": {
+                "race": "WHITE",
+                "value": "7.7"
+            },
+            "HISPANIC2012": {
+                "race": "HISPANIC",
+                "value": "11.3"
+            },
+            "ALLRACES2012": {
+                "race": "ALLRACES",
+                "value": "8.7"
+            },
+            "NATIVEAMERICAN2012": {
+                "race": "NATIVEAMERICAN",
+                "value": "9.2"
+            }
+        }
+    }
+}
