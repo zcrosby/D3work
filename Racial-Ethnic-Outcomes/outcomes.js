@@ -6,31 +6,14 @@ var MakeBarChart = MakeBarChart || {};
 d3.json("data.json", function(d){
  	
  	MakeBarChart.data = d;
+/*----------DATA Independent-----Should only render ONCE---------------*/
+	MakeBarChart.Setup("chartContainer");
+	MakeBarChart.DrawingBoard();
 
- 	/*var needsUpdate;
- 	var yes = true;
- 	var no = false;*/
+/*----------DATA Dependent------Should be updated each time a new year is selected------------*/
+	MakeBarChart.Update('2010');
 
- 	MakeBarChart.hasRun = false;
-
-	if (MakeBarChart.hasRun == false){
-		MakeBarChart.Setup('chartContainer');
-		MakeBarChart.DrawingBoard();
-	
-		$(function(){
-			MakeBarChart.Update($('#yearSelector').val()); // Default Year when page loads
-			$("#yearSelector").on('change', function(){
-				// This updates the data when we select a new year
-				var val = $(this).val();
-				MakeBarChart.Update(val);
-			});
-		});
-		MakeBarChart.hasRun = true;
-	}//end if
-	
 });
-
-
 
 MakeBarChart.Update = function(year){
 	var self = this;
@@ -69,11 +52,8 @@ MakeBarChart.DrawingBoard = function(){
 		          	.attr("class", "legend")
 		          	.attr("width", self.cWidth)
 		          	.attr("height", 70)
-		          	/*.attr("x", "565")(" + self.cWidth - self.margin.left+ ")")*/
-		          	/*.attr("y", "880")"(" + self.cHeight - self.margin.bottom + ")")*/
 		          	.append("g")
 		          	.attr("class", "legend-group");
-		         	//.attr("transform", "translate(0,500)"); /*+ (self.cHeight - self.margin.bottom) + ")");*/
 }
 
 MakeBarChart.CollectData = function(year){
@@ -114,21 +94,21 @@ MakeBarChart.DrawLegend = function(){
 	legend.selectAll('text')
 			.append("g")
 			.attr("class", "g-text")
-			//.attr("transform", "translate(" + self.margin.left + "," + self.margin.top + ")");
 			.data(data)
 			.enter()
 			.append('text')
 			.text(function(d){return d})
 			.attr('class', 'legend-text');
-	/*how to fix the text!*/
 }
 
 MakeBarChart.SetScales = function(){
 		
 		var self = this;
-		self.xScale = d3.scale.ordinal()
+		var padding = 200;
+
+		self.xScale = d3.scale.linear()
 						 	  .domain(self.ordinalLabel)
-						 	  .rangeRoundBands([0,self.cWidth], .1);
+						 	  .range([padding, self.cWidth - padding *2]);
 
 
 		self.yScale = d3.scale.linear()	 					
@@ -152,46 +132,47 @@ MakeBarChart.DrawAxes = function(){
 			    	return d + "%"
 			    	});
 
-	if(self.hasRun==false){
-		d3.select(self.container).select('svg .container')
-						.append("g")
-						.attr("class","xAxis")
-						.attr("width", self.cWidth-self.margin.left)
-						.attr("transform", "translate(0," + self.cHeight + ")")
-						/*.attr("transform", "translate(" + (((self.cWidth-self.margin.left)/3)) + "," + self.cHeight + ")")*/
-			      		.call(self.xAxis);
-								
+	
+	var xText = d3.select(self.container).select('svg .container')
+					.append("g")
+					.attr("class","xAxis")
+					.attr("width", self.cWidth-self.margin.left)
+					.attr("transform", "translate(0," + self.cHeight + ")")
+					/*.attr("transform", "translate(" + (((self.cWidth-self.margin.left)/3)) + "," + self.cHeight + ")")*/
+					.call(self.xAxis);
 
-		d3.select(self.container).select('svg .container')
-								 .append("g")
-								 .attr("transform", "translate(" + self.cWidth + ",0)")
-					    		 .attr("class", "yAxis")
-					      		 .call(self.yAxis);
+		xText.selectAll("text")
+				.data(self.ordinalLabel)
+				.enter()
+				.append("text")
+				.text(function(d){
+					return d[0];
+				});
 
-	}else{
-		// hasRun is true
-		d3.select(self.container).select('svg .container .yAxis').call(self.yAxis);
-		d3.select(self.container).select('svg .container .xAxis').call(self.xAxis)
-	}
+
+
+
+		      		//.call(self.xAxis);
+	
+
+	d3.select(self.container).select('svg .container')
+							 .append("g")
+							 .attr("transform", "translate(" + self.cWidth + ",0)")
+				    		 .attr("class", "yAxis")
+				      		 .call(self.yAxis);
 }
 
 MakeBarChart.DrawBars = function(){
 	var self = this;
 	var i = 0;
-	var indicatorBars;
-
 	for(var s in self.sortedData){
-			if(self.hasRun==false){
-				indicatorBars = d3.select(self.container)
+			
+			var indicatorBars = d3.select(self.container)
 						  .select('.graph .container')
 						  .append('g')
 						  .attr("class", "indicatorBars")
-						  .attr("id", "ib_" + i)
 						  .attr('transform',"translate(" + self.xScale(i*(self.barWidth)) + ",0)")
-			}else{
-				indicatorBars = d3.select(self.container).select('#ib_'+i);
-				indicatorBars.selectAll('rect').remove();
-			}
+						
 
 			i++;
 
@@ -201,11 +182,12 @@ MakeBarChart.DrawBars = function(){
 				return b.value - a.value
 				});
 
-			var Bars = indicatorBars.selectAll("rect")
+			var Bars = indicatorBars.selectAll("indicatorBars")
 						 .data(data, function(d) {
 						 		return d.value;
 						 	})
-						 .enter().append("rect")
+						 .enter()
+						 .append("rect")
 						 .attr('width', self.barWidth)
 						 .attr('class', function(d){
 						 	return d.race.toLowerCase();
@@ -232,8 +214,6 @@ MakeBarChart.DrawBars = function(){
 						 		obj.attr('class', currClass.replace(' selected', ''));
 						 		d3.selectAll('svg rect').attr('opacity', .9)
 						 })
-
-
 	}//end for loop
 }
 
