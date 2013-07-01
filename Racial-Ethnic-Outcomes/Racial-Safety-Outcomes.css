@@ -10,11 +10,13 @@
 
 svg {
 
-  font: 10px sans-serif;
+  font: 11px sans-serif;
 }
 
 .legend{
-	
+	position: absolute;
+	bottom: -14px;
+	left: 32px;
 	/*position: absolute;
 	bottom:10px;
 	left:20px;*/
@@ -22,13 +24,12 @@ svg {
 }	
 
 .legend-item{
+	cursor: pointer;
 }
 
 .legend-text{
-	fill:#000;
 	opacity:1;
-	
-	stroke: #444;
+	shape-rendering: crispEdges;
 }
 
 #selectYear{
@@ -57,13 +58,13 @@ svg {
 
 .xAxis text{
 
-	fill:#265573;
+	fill:#401212;
 	text-anchor:middle;
 }
 
 .indicatorBars rect{
 	cursor: pointer;
-	/*opacity: 0.8;*/
+	
 }
 
 .indicatorBars rect.selected{
@@ -73,32 +74,28 @@ svg {
 
 }
 
-.legend-text{
-
-}
-
 /*RACE COLOR PALLETE*/
 
 .allraces{
-	fill:#265573;
+	fill:#FCA7AD;
 }
 
 .asian{
-	fill:#386D73;
+	fill:#90373D;
 }
 
 .black{
-	fill:#3B8686;
+	fill:#7A5154;
 }
 
 .hispanic{
-	fill:#79BD9A;
+	fill:#B2787C;
 }
 
 .nativeamerican{
-	fill:#A8DBA8;
+	fill:#472F31;
 }
 
 .white{
-	fill:#CFF09E;
+	fill:#BD4750;
 }

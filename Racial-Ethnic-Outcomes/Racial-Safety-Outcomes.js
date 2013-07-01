@@ -17,7 +17,7 @@ d3.json("data.json", function(d){
 		MakeBarChart.Setup('chartContainer');
 		MakeBarChart.DrawingBoard();
 	
-		$(function(){
+		$(function(){//short hand of document.ready
 			MakeBarChart.Update($('#yearSelector').val()); // Default Year when page loads
 			$("#yearSelector").on('change', function(){
 				// This updates the data when we select a new year
@@ -29,8 +29,6 @@ d3.json("data.json", function(d){
 	}//end if
 	
 });
-
-
 
 MakeBarChart.Update = function(year){
 	var self = this;
@@ -68,12 +66,9 @@ MakeBarChart.DrawingBoard = function(){
 		          	.append("svg")
 		          	.attr("class", "legend")
 		          	.attr("width", self.cWidth)
-		          	.attr("height", 70)
-		          	/*.attr("x", "565")(" + self.cWidth - self.margin.left+ ")")*/
-		          	/*.attr("y", "880")"(" + self.cHeight - self.margin.bottom + ")")*/
+		          	.attr("height", 70)		    
 		          	.append("g")
-		          	.attr("class", "legend-group");
-		         	//.attr("transform", "translate(0,500)"); /*+ (self.cHeight - self.margin.bottom) + ")");*/
+		          	.attr("class", "legend-group");		         
 }
 
 MakeBarChart.CollectData = function(year){
@@ -93,6 +88,7 @@ MakeBarChart.DrawLegend = function(){
 	var padding = 10;
 	var w = (self.cWidth/data.length) - padding;
 	var dimensions = [w, 20]; // width, height
+	var legHeight = 70;
 	
 
 	var legend = self.legend;
@@ -108,19 +104,31 @@ MakeBarChart.DrawLegend = function(){
 			.attr('height', dimensions[1])
 			.attr('x', function(d,i){
 				return (dimensions[0] + padding) *i;
-				});
+				})
+			.on('mouseover', function(){
+				var race_class = d3.select(this).attr("class").replace('legend-item ', '');
+				d3.select(this).attr("stroke", "#444");
+				d3.selectAll(".graph rect").attr('opacity', .05);
+				d3.selectAll(".graph ." + race_class).attr('opacity', 1);
 
+
+			})
+			.on('mouseout', function(){
+				d3.select(this).attr("stroke", "none");
+				d3.selectAll(".graph rect").attr('opacity', 1);
+			});
 
 	legend.selectAll('text')
-			.append("g")
-			.attr("class", "g-text")
-			//.attr("transform", "translate(" + self.margin.left + "," + self.margin.top + ")");
 			.data(data)
 			.enter()
 			.append('text')
 			.text(function(d){return d})
-			.attr('class', 'legend-text');
-	/*how to fix the text!*/
+			.attr('class', 'legend-text')
+			.attr('x', function(d,i){
+				return (dimensions[0] + padding) *i;
+				})
+			.attr("transform", "translate(0," + (legHeight - 35)+ ")")
+			.attr("font-size", "10px");
 }
 
 MakeBarChart.SetScales = function(){
@@ -181,7 +189,7 @@ MakeBarChart.DrawBars = function(){
 	var indicatorBars;
 
 	for(var s in self.sortedData){
-			if(self.hasRun==false){
+			if(self.hasRun == false){
 				indicatorBars = d3.select(self.container)
 						  .select('.graph .container')
 						  .append('g')
@@ -216,25 +224,15 @@ MakeBarChart.DrawBars = function(){
 						 		})
 						 .attr('height', function(d){
 						 		return self.cHeight - self.yScale(d.value);
-						 })
-						 .on('mouseover', function(d){
-						 		//console.log(d.value);
-						 		var obj = d3.select(this);
-						 		var currClass = obj.attr('class');
-						 		obj.attr('class', currClass + ' selected');
-						 		d3.selectAll('svg rect')
-						 		.attr('opacity', .1)
-						 })
-						 .on('mouseout', function(d){
-						 		var obj = d3.select(this);
-						 		
-						 		var currClass = obj.attr('class');
-						 		obj.attr('class', currClass.replace(' selected', ''));
-						 		d3.selectAll('svg rect').attr('opacity', .9)
-						 })
+						 });
 
 
 	}//end for loop
+}
+
+
+/*-----------UTILITY ROUTINES-------------*/
+MakeBarChart.mouseEvents = function(){
 }
 
 MakeBarChart.sortDataSet = function(year){
