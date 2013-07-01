@@ -41,7 +41,7 @@ MakeBarChart.Update = function(year){
 
 MakeBarChart.Setup = function(divId) {
 		var self = this;
-		self.margin = {top: 20, right: 35, bottom: 120, left: 35};
+		self.margin = {top: 100, right: 35, bottom: 120, left: 35};
 		self.container = document.getElementById(divId);
 		self.cHeight = self.container.scrollHeight - self.margin.top - self.margin.bottom;
 		self.cWidth = self.container.scrollWidth - (self.margin.left + self.margin.right);
@@ -87,7 +87,7 @@ MakeBarChart.DrawLegend = function(){
 	var data = self.race_list;
 	var padding = 10;
 	var w = (self.cWidth/data.length) - padding;
-	var dimensions = [w, 20]; // width, height
+	var dimensions = [w, 15]; // width, height
 	var legHeight = 70;
 	
 
@@ -165,11 +165,11 @@ MakeBarChart.DrawAxes = function(){
 						.append("g")
 						.attr("class","xAxis")
 						.attr("width", self.cWidth-self.margin.left)
-						.attr("transform", "translate(0," + self.cHeight + ")")
+						.attr("transform", "translate("+(self.margin.left - 53)+"," + self.cHeight + ")")
 						/*.attr("transform", "translate(" + (((self.cWidth-self.margin.left)/3)) + "," + self.cHeight + ")")*/
 			      		.call(self.xAxis);
 								
-
+ 
 		d3.select(self.container).select('svg .container')
 								 .append("g")
 								 .attr("transform", "translate(" + self.cWidth + ",0)")
@@ -222,6 +222,7 @@ MakeBarChart.DrawBars = function(){
 						 .attr("y", function(d){
 						 		return self.yScale(d.value);
 						 		})
+
 						 .attr('height', function(d){
 						 		return self.cHeight - self.yScale(d.value);
 						 });
@@ -296,7 +297,7 @@ MakeBarChart.getOrdinalLabels = function(year){
 	var ordinalLabels = [];
 
 	for(var ind in yearIn_dataset){
-			ordinalLabels.push(ind);
+			ordinalLabels.push(ind.replace(/\s\(.*/, ""));
 	}
 
 	return ordinalLabels;

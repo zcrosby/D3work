@@ -1,16 +1,42 @@
 
  /*---------*/
+ /*svg {
+
+  font: 11px sans-serif;
+}*/
+
 #chartContainer{
 	position:relative;
 	width:1000px;
-	height:600px;
+	height:700px;
 	border:solid 1px #e3e3e3;
+	font: 11px sans-serif;
 	
 }
 
-svg {
+#selectYear{
+	
+	position: absolute;
+	height: 25px;
+	top: 95px;
+	right: 35px;
+}
 
-  font: 11px sans-serif;
+#title{
+	font-size: 25px;
+	position: absolute;
+	top: 30px;
+	left: 70px;
+	shape-rendering: crispEdges;
+	color:;
+
+}
+
+#sideNote{
+	position: relative;
+	top: 44px;
+	left: -30px;
+	
 }
 
 .legend{
@@ -32,14 +58,6 @@ svg {
 	shape-rendering: crispEdges;
 }
 
-#selectYear{
-	position: absolute;
-	width: 200px;
-	height: 25px;
-	left: 920px;
-	top: 20px;
-}
-
 .yAxis path{
 	display: none;
 }
@@ -57,9 +75,7 @@ svg {
 }
 
 .xAxis text{
-
-	fill:#401212;
-	text-anchor:middle;
+	fill:#000000;
 }
 
 .indicatorBars rect{
@@ -93,7 +109,8 @@ svg {
 }
 
 .nativeamerican{
-	fill:#472F31;
+	fill:#571818;
+	/*fill:#401212;*/
 }
 
 .white{
