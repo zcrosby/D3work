@@ -110,8 +110,6 @@ MakeBarChart.DrawLegend = function(){
 				d3.select(this).attr("stroke", "#444");
 				d3.selectAll(".graph rect").attr('opacity', .05);
 				d3.selectAll(".graph ." + race_class).attr('opacity', 1);
-
-
 			})
 			.on('mouseout', function(){
 				d3.select(this).attr("stroke", "none");
@@ -141,7 +139,7 @@ MakeBarChart.SetScales = function(){
 
 		self.yScale = d3.scale.linear()	 					
 	    				 	 .domain([0,self.datasetMax])
-	  	  				 	 .range([self.cHeight,0]); //([600,0])
+	  	  				 	 .range([self.cHeight,0]); 
 }
 
 MakeBarChart.DrawAxes = function(){
@@ -166,7 +164,6 @@ MakeBarChart.DrawAxes = function(){
 						.attr("class","xAxis")
 						.attr("width", self.cWidth-self.margin.left)
 						.attr("transform", "translate("+(self.margin.left - 53)+"," + self.cHeight + ")")
-						/*.attr("transform", "translate(" + (((self.cWidth-self.margin.left)/3)) + "," + self.cHeight + ")")*/
 			      		.call(self.xAxis);
 								
  
